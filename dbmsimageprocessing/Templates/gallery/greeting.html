@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>greetings</title>
+      <link rel="icon"  type="image/x-icon" href="static/image/profile.png">
+    <style media="screen">
+      .container {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      background-color: #2196F3;
+      padding: 2vw;
+    }
+.insidecontainer {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: 3vw;
+  text-align: center;
+}
+.header
+{
+
+  text-align:center;
+  border: 2px solid black;
+  background-color:gray;
+}
+    </style>
+
+  </head>
+  <body>
+    <div class="header">
+      <h1>------------------Gallery-------------------</h1>
+    </div>
+    <div class="container">
+        {% for i in bb%}
+        <div class="insidecontainer">
+          <h1>{{i.imagename}}</h1>
+          <img src="{{i.image.url}}" width="200px" height="200px" alt="not pro">
+        </div>
+
+        {% endfor %}
+    </div>
+    <img src="{% static 'image/profile.png'%}" alt="kuch to CharField">
+  </body>
+</html>
